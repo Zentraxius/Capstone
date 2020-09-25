@@ -8,12 +8,13 @@ public class Computer : MonoBehaviour
     void Start()
     {
         ShowMainMenu();
-
     }
 
     void ShowMainMenu() 
     {
         Terminal.ClearScreen();
+        string greeting = "Hello: Anonymous";
+        Terminal.WriteLine(greeting);
         Terminal.WriteLine("Welcome to the Mainframe, currently there is '1' game loaded with '3' level(s)");
         Terminal.WriteLine("Press 1, 2, or 3, to play the corresponding level of the loaded game.");
         Terminal.WriteLine("Input your decision here:");

@@ -3,4 +3,5 @@ Unity Asset Store // Installed Open WebGL Plugin
 Successfully installed, executed, and uploaded Open WebGL with tutorial game
 https://connect.unity.com/mg/fps/untitledtest-14 // Located here.
 Begin testing terminal/computer scripts in unity
-Formatted scripting and line spacing in terminal 
+Formatted scripting and line spacing in terminal.
+Improved terminal functionality and acquired resources 
