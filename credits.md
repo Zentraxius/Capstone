@@ -12,3 +12,4 @@ Learned about Visual Studio behaviours and functions to extract methods and quic
 Have successfully utilized update and debug mode in Unity to search for errors and access debug/backend information, learned about how to better use switch cases in C# as well as randomly pulling objects from an array.
 Successfully learned how to implement ASCII art into C# code - including the syntax needed with functional examples.
 Baseline game functionality for initial scene is completed -- Computer Terminal // Will apply slight polish and clean up some sections of code.
+Code polished, successfully built and exported to zip, runnable on unity and setup base portfolio at itch.io address ( https://zentraxius.itch.io/computeranagram )

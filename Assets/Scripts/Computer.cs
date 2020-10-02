@@ -7,7 +7,7 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     // Game Config Data
-    string menuHint = "You may type menu at any time.";
+    const string menuHint = "You may type menu at any time.";
     string[] level1Passwords = { "Masculine", "Terraform", "Bouncing", "Cathedral", "Electrocute" };
     string[] level2Passwords = { "Cyborg", "Extraterrestrial", "Aircraft", "Moonshine", "Radiation" };
     string[] level3Passwords = { "Conjuration", "Imagination", "Deformation", "Emancipation", "Vacation" };
