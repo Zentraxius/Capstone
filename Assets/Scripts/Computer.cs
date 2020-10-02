@@ -1,49 +1,106 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Computer : MonoBehaviour
 {
+    // Game Config Data
+    string[] level1Passwords = { "Masculine", "Terraform", "Bouncing", "Cathedral", "Electrocute" };
+    string[] level2Passwords = { "Cyborg", "Extraterrestrial", "Aircraft", "Moonshine", "Radiation" };
+    string[] level3Passwords = { "Conjuration", "Imagination", "Deformation", "Emancipation", "Vacation" };
+    // Game State \\ 
+    int level;
+
+    enum Screen { MainMenu, Password, Win };
+    Screen currentScreen;
+    string password;
+
     // Start is called before the first frame update
     void Start()
     {
-        ShowMainMenu("Welcome, User#101");
+        print(level1Passwords[1]);
+        ShowMainMenu();
     }
-
-    void ShowMainMenu(string greeting) 
+    void ShowMainMenu()
     {
+        currentScreen = Screen.MainMenu;
         Terminal.ClearScreen();
         // string greeting = "Hello: Anonymous";
-        Terminal.WriteLine(greeting);
         Terminal.WriteLine("Welcome to the Mainframe, currently there is '1' game loaded with '3' level(s)");
         Terminal.WriteLine("Press 1, 2, or 3, to play the corresponding level of the loaded game.");
         Terminal.WriteLine("Input your decision here:");
     }
-
     void OnUserInput(string input)
     {
-        // Terminal.WriteLine("Message Received: " + input);
-        //print(input == "1"); // Boolean statement, if input==1 then returns True, otherwise, false
-        if(input=="menu")
+        if (input == "menu") // Straight to Menu
         {
-            ShowMainMenu("You have returned to the menu");
-        } else if(input == "1")
+            ShowMainMenu();
+        }
+        else if (currentScreen == Screen.MainMenu)
         {
-            print(input == "1");
-                Terminal.WriteLine("You have selected level 1");
-        } else
+            RunMainMenu(input);
+        }
+        else if (currentScreen == Screen.Password)
         {
-            Terminal.WriteLine("Invalid Entry");
-
+            CheckPassword(input);
         }
     }
 
 
-    // Update is called once per frame
-   // void Update()
-  //  {
-        
-   // }
+    void RunMainMenu(string input)
+    {
+        bool isValidLevelNumber = (input == "1" || input == "2" || input == "3");
+        if (isValidLevelNumber)
+        {
+            level = int.Parse(input);
+            StartGame();
+        }
+        else if (input == "007")
+        {
+            Terminal.WriteLine("Do you need a Bondulance?");
+        }
+        else
+        {
+            Terminal.WriteLine("Invalid Entry");
+        }
+    }
+
+    void StartGame()
+    {
+        print(level1Passwords.Length);
+        currentScreen = Screen.Password;
+        Terminal.ClearScreen();
+        switch(level)
+        {
+            case 1:
+                password = level1Passwords[Random.Range(0, level1Passwords.Length)];
+                break;
+            case 2:
+                password = level2Passwords[Random.Range(0, level2Passwords.Length)]; 
+                break;
+            case 3:
+                password = level3Passwords[Random.Range(0, level3Passwords.Length)]; 
+                break;
+            default:
+                Debug.LogError("Invalid selection has been made");
+                break;
+        }
+        Terminal.WriteLine("Please enter your password: ");
+    }
+
+    void CheckPassword(string input)
+    {
+        if (input == password)
+        {
+            Terminal.WriteLine("Correct!");
+        }
+        else
+        {
+            Terminal.WriteLine("Incorrect. Try again.");
+        }
+    }
+
+
 }
