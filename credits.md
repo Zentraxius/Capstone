@@ -13,3 +13,6 @@ Have successfully utilized update and debug mode in Unity to search for errors a
 Successfully learned how to implement ASCII art into C# code - including the syntax needed with functional examples.
 Baseline game functionality for initial scene is completed -- Computer Terminal // Will apply slight polish and clean up some sections of code.
 Code polished, successfully built and exported to zip, runnable on unity and setup base portfolio at itch.io address ( https://zentraxius.itch.io/computeranagram )
+// End Scene 1 //
+Begin Scene 2
+Drafting out 'Rocket Pilot Application'
