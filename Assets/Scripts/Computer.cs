@@ -7,6 +7,7 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     // Game Config Data
+    string menuHint = "You may type menu at any time.";
     string[] level1Passwords = { "Masculine", "Terraform", "Bouncing", "Cathedral", "Electrocute" };
     string[] level2Passwords = { "Cyborg", "Extraterrestrial", "Aircraft", "Moonshine", "Radiation" };
     string[] level3Passwords = { "Conjuration", "Imagination", "Deformation", "Emancipation", "Vacation" };
@@ -55,7 +56,7 @@ public class Computer : MonoBehaviour
         if (isValidLevelNumber)
         {
             level = int.Parse(input);
-            StartGame();
+            AskForPassword();
         }
         else if (input == "007")
         {
@@ -64,43 +65,89 @@ public class Computer : MonoBehaviour
         else
         {
             Terminal.WriteLine("Invalid Entry");
+            Terminal.WriteLine(menuHint);
         }
     }
 
-    void StartGame()
+    void AskForPassword()
     {
-        print(level1Passwords.Length);
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
-        switch(level)
+        SetRandomPassword();
+        Terminal.WriteLine(menuHint);
+        Terminal.WriteLine("Enter your password: " + password.Anagram());
+    }
+
+    private void SetRandomPassword()
+    {
+        switch (level)
         {
             case 1:
                 password = level1Passwords[Random.Range(0, level1Passwords.Length)];
                 break;
             case 2:
-                password = level2Passwords[Random.Range(0, level2Passwords.Length)]; 
+                password = level2Passwords[Random.Range(0, level2Passwords.Length)];
                 break;
             case 3:
-                password = level3Passwords[Random.Range(0, level3Passwords.Length)]; 
+                password = level3Passwords[Random.Range(0, level3Passwords.Length)];
                 break;
             default:
                 Debug.LogError("Invalid selection has been made");
                 break;
         }
-        Terminal.WriteLine("Please enter your password: ");
     }
 
     void CheckPassword(string input)
     {
         if (input == password)
         {
-            Terminal.WriteLine("Correct!");
+            DisplayWinScreen();
         }
         else
         {
-            Terminal.WriteLine("Incorrect. Try again.");
+            AskForPassword();
         }
     }
 
+    void DisplayWinScreen()
+    {
+        currentScreen = Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+        Terminal.WriteLine(menuHint);
+    }
 
+    void ShowLevelReward()
+    {
+        switch (level)
+        {
+            case 1:
+                Terminal.WriteLine("Correct!");
+                Terminal.WriteLine(@"
+///
+   / \ / /
+  / \ / /
+ / \ / /
+/ \ / /
+;;;
+ASCII
+"
+                );
+
+                break;
+            case 2:
+                Terminal.WriteLine("Correct!");
+                Terminal.WriteLine(@"
+///
+/// 
+/// 
+   "
+                );
+                break;
+            case 3:
+                Terminal.WriteLine("Correct!!");
+                Terminal.WriteLine(@"This is where we'd put ASCII art if our graphic designer hadn't spilled coffee on his laptop");
+                break;
+        }
+    }
 }
