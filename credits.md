@@ -17,3 +17,4 @@ Code polished, successfully built and exported to zip, runnable on unity and set
 Begin Scene 2
 Drafting out 'Rocket Pilot Application'
 Experimental version control testing, attempted to make custom assets
+Base level created, launch pad, terrain, colored terrain, directional light with 3d shadowing functioning, custom set camera angles
