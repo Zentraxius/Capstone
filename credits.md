@@ -22,3 +22,4 @@ Beginning to make custom models for rocket ship.
 Made "placeholder" foreverRocket and attached custom collision mesh, attached initial script, beginning to track user input
 User input has been tracked, debugged, and applied with Space being universally available, A takes priority over D for left/right turning.
 User input has been improved, thrust and launch enabled, directional based performance implemented, isolated rigidbody function responsible for spinning rocket of death, removed function responsible for spinning rocket of death
+Begin to add audiosourcing, adjusted details of collision for landing sequence // todo : Custom landing *feet* // Update all existing models to prefabs and adjusted prefab sources to take precedence in heirarchy - enabled update for rocket.
