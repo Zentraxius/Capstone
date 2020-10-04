@@ -19,3 +19,4 @@ Drafting out 'Rocket Pilot Application'
 Experimental version control testing, attempted to make custom assets
 Base level created, launch pad, terrain, colored terrain, directional light with 3d shadowing functioning, custom set camera angles
 Beginning to make custom models for rocket ship.
+Made "placeholder" foreverRocket and attached custom collision mesh, attached initial script, beginning to track user input
