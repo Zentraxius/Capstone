@@ -30,10 +30,10 @@ public class Rocket : MonoBehaviour
         ///
         if (Input.GetKey(KeyCode.A))
         {
-            print("A is being pressed");
+            transform.Rotate(Vector3.forward);
         } else if (Input.GetKey(KeyCode.D)) // Cannot use both A and D simultaneously
         {
-            print("D is being pressed");
+            transform.Rotate(-Vector3.forward);
         }
         ///
     }
