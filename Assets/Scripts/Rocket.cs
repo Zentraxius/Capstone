@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,21 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Update");   
+        ProcessInput(); 
+    }
+
+    private void ProcessInput()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            print("Space has been pressed");
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            print("A is being pressed");
+        } else if (Input.GetKey(KeyCode.D))
+        {
+            print("D is being pressed");
+        }
     }
 }
