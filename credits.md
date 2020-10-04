@@ -25,3 +25,4 @@ User input has been improved, thrust and launch enabled, directional based perfo
 Begin to add audiosourcing, adjusted details of collision for landing sequence // todo : Custom landing *feet* // Update all existing models to prefabs and adjusted prefab sources to take precedence in heirarchy - enabled update for rocket.
 Add free sound effect from freesound.org, obtaining one with creative commons zero license.
 Initial audio settings implemented, adjusted collision mesh and rendering, added debug line to code
+Audio sounds improved, audio now begins on space enter, and ends on space release, fixed looping error
