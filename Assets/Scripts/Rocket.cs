@@ -25,15 +25,17 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         { // Can use booster while turning
             rigidBody.AddRelativeForce(Vector3.up);
-
+            print("Boost-SPACE is currently being deployed");
         }
         ///
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward);
+            print("A is being registered");
         } else if (Input.GetKey(KeyCode.D)) // Cannot use both A and D simultaneously
         {
             transform.Rotate(-Vector3.forward);
+            print("D is being registered");
         }
         ///
     }
