@@ -19,10 +19,12 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInput(); 
+        Booster();
+        Rotate(); 
     }
 
-    private void ProcessInput()
+
+    private void Booster()
     {
         if (Input.GetKey(KeyCode.Space))
         { // Can use booster while turning
@@ -37,18 +39,20 @@ public class Rocket : MonoBehaviour
         {
             audioSource.Stop();
         }
-
-        
-        ///
+    }
+    private void Rotate()
+    {
+        rigidBody.freezeRotation = true; // Essentially disabled physics interaction while using thrusters 
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward);
             print("A is being registered");
-        } else if (Input.GetKey(KeyCode.D)) // Cannot use both A and D simultaneously
+        }
+        else if (Input.GetKey(KeyCode.D)) // Cannot use both A and D simultaneously
         {
             transform.Rotate(-Vector3.forward);
             print("D is being registered");
         }
-        ///
+        rigidBody.freezeRotation = false; // Re-enables physics
     }
 }
