@@ -31,4 +31,5 @@ New bug introduced - rapid pressing of space to stabilize momentum results in fo
 Bug won this round, added variable to change speed of rocket for both thrust and rotation.
 Adjusted plane and camera
 Added detection for collision and output for determining which tagged collisions have been made
-Completed current work on tags, moving on to improving level design
+Completed current work on tags, moving on to improving level design.
+Add initial obstacle and create collision collider 

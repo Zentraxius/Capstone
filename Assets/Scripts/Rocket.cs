@@ -33,10 +33,13 @@ public class Rocket : MonoBehaviour
                 print("Hitting Friendly");// Safe
                 break;
             case "Terrain":
-                print("You crashed into the ground");
+                print("You crashed into the ground!");
+                break;
+            case "Unfriendly":
+                print("You crashed into an obstacle!");
                 break;
             default:
-                print("Untagged Collision");
+                print("Default");
                 break;
         }
     }
