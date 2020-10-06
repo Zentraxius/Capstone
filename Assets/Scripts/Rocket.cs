@@ -25,7 +25,18 @@ public class Rocket : MonoBehaviour
         Rotate(); 
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                print("Hitting Friendly");// Safe
+                break;
+            case "Terrain":
+                print("You died");
+                break;
+        }
+    }
     private void Booster()
     {
         float thrustThisFrame = rcsThrust * Time.deltaTime;
