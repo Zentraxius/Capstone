@@ -32,4 +32,4 @@ Bug won this round, added variable to change speed of rocket for both thrust and
 Adjusted plane and camera
 Added detection for collision and output for determining which tagged collisions have been made
 Completed current work on tags, moving on to improving level design.
-Add initial obstacle and create collision collider 
+Add initial obstacle and create collision collider .
