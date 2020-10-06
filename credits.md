@@ -29,4 +29,5 @@ Audio sounds improved, audio now begins on space enter, and ends on space releas
 Added linear drag to make movement more realistic, added landing platform/obstacles, fixed new spinning death rocket bug, enhanced mobility and expanded terrain size, added colors
 New bug introduced - rapid pressing of space to stabilize momentum results in former clicking sound bug to be reintroduced, refactored code.
 Bug won this round, added variable to change speed of rocket for both thrust and rotation.
+Adjusted plane and camera
 
