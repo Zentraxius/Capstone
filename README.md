@@ -21,6 +21,7 @@ Upon being downloaded, currently it is setup as a build environment if you acces
 - In Firefox, go to "about:config" -> search for privacy.file_unique_origin || double click this and set it to false.
 - The index.html can now be run in firefox browser // NOTE: BUGGED AND CURRENTLY NOT WORKING.
 - GH Pages link is here | https://zentraxius.github.io/ComputerAnagram/index.html | It is also not working due to an issue with Unity Assets not running in browser for this type
+* The rocket can be accessed through the following link: https://simmer.io/@Zentraxius/prealpharocket | Suggest mute, as audio seems to have become notably louder upon upload.
 
 If it is downloaded from github, it is in its development state and must be opened using the unity editor
 Those interested can begin their journey here: https://unity3d.com/get-unity/download
