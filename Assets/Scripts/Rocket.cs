@@ -38,6 +38,9 @@ public class Rocket : MonoBehaviour
             case "Unfriendly":
                 print("You crashed into an obstacle!");
                 break;
+            case "Landing":
+                print("Landed on Landing Pad");
+                break;
             default:
                 print("Default - untagged");
                 break;
