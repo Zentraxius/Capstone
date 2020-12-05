@@ -30,7 +30,7 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                print("Hitting Friendly");// Safe
+                print("Hitting Friendly"); // Safe
                 break;
             case "Terrain":
                 print("You crashed into the ground!");
@@ -39,7 +39,7 @@ public class Rocket : MonoBehaviour
                 print("You crashed into an obstacle!");
                 break;
             default:
-                print("Default");
+                print("Default - untagged");
                 break;
         }
     }

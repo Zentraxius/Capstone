@@ -32,6 +32,8 @@ Methods for accessing the finished products as an independent webpage are under 
 
 None, only features.
 ~Currently the game is not runnable outside of the development environment for computeranagram
+~Camera does not follow rocket
+~Rocket goes off screen because camera does not follow rocket
 
 ## Support Details
 
