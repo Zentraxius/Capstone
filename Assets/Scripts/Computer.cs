@@ -3,6 +3,7 @@
 // using System.Collections.Generic;
 // using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Computer : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Computer : MonoBehaviour
     // Game State \\ 
     int level;
 
-    enum Screen { MainMenu, Password, Win };
+    enum Screen { MainMenu, Password, Win, LevelSelect };
     Screen currentScreen;
     string password;
 
@@ -31,7 +32,16 @@ public class Computer : MonoBehaviour
         // string greeting = "Hello: Anonymous";
         Terminal.WriteLine("Welcome to the Mainframe, currently there is '1' game loaded with '3' level(s)");
         Terminal.WriteLine("Press 1, 2, or 3, to play the corresponding level of the loaded game.");
+        Terminal.WriteLine("Alternatively, press 0 to access the game selection screen");
         Terminal.WriteLine("Input your decision here:");
+    }
+    void ShowLevelSelect()
+    {
+        currentScreen = Screen.LevelSelect;
+        Terminal.ClearScreen();
+        Terminal.WriteLine("Welcome to the game selection menu, please choose from the following options.");
+        Terminal.WriteLine("Terminal Anagram: 1");
+        Terminal.WriteLine("Rocket Obstacle Course: 2");
     }
     void OnUserInput(string input)
     {
@@ -47,8 +57,30 @@ public class Computer : MonoBehaviour
         {
             CheckPassword(input);
         }
+        else if (currentScreen == Screen.LevelSelect)
+        {
+            LevelSelectionMenu(input);
+        }
     }
 
+    private void LevelSelectionMenu(string input)
+    {
+        bool isValidLevelNumber = (input == "1" || input == "2");
+        if (isValidLevelNumber)
+        {
+            if (input == "1")
+            {
+                SceneManager.LoadScene(0);
+            } else if (input == "2")
+            {
+                SceneManager.LoadScene(1);
+            }
+
+        } else
+        {
+            Terminal.WriteLine("Invalid Entry");
+        }
+    }
 
     void RunMainMenu(string input)
     {
@@ -61,6 +93,10 @@ public class Computer : MonoBehaviour
         else if (input == "007")
         {
             Terminal.WriteLine("Do you need a Bondulance?");
+        }
+        else if (input == "0")
+        {
+            ShowLevelSelect();
         }
         else
         {

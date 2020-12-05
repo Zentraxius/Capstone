@@ -34,15 +34,15 @@ public class Rocket : MonoBehaviour
                 break;
             case "Terrain":
                 print("Crashed(Terrain)");
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
                 break;
             case "Unfriendly":
                 print("Crashed(Obstacle)");
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
                 break;
             case "Landing":
                 print("Landed!");
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 break;
             default:
                 print("Error - Untagged Collision");
