@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿// using System;
+// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -30,19 +31,21 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                print("Hitting Friendly"); // Safe
                 break;
             case "Terrain":
-                print("You crashed into the ground!");
+                print("Crashed(Terrain)");
+                SceneManager.LoadScene(0);
                 break;
             case "Unfriendly":
-                print("You crashed into an obstacle!");
+                print("Crashed(Obstacle)");
+                SceneManager.LoadScene(0);
                 break;
             case "Landing":
-                print("Landed on Landing Pad");
+                print("Landed!");
+                SceneManager.LoadScene(1);
                 break;
             default:
-                print("Default - untagged");
+                print("Error - Untagged Collision");
                 break;
         }
     }

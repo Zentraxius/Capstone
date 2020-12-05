@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/TerminalScene.unity
+    path: Assets/Scenes/Terminal/TerminalScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/RocketScene1.unity
+    path: Assets/Scenes/Rocket/Level 1.unity
     guid: 44693e3ea58175e4993a296b91365c7b
+  - enabled: 1
+    path: Assets/Scenes/Rocket/Level 2.unity
+    guid: da4bbde6fd6c8414eaff49fce37324a1
   m_configObjects: {}
